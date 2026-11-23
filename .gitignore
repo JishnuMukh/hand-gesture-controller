@@ -1,7 +1,60 @@
+# --- Python / tooling
 .venv/
+venv/
+env/
 __pycache__/
+*.py[cod]
 .pytest_cache/
-*.pyc
-.DS_Store
-# Downloaded automatically by run.sh
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# --- Downloaded automatically by run.sh (pinned URL + SHA-256)
 models/
+
+# --- Local debugging output (--snapshot-dir)
+snapshots/
+
+# --- macOS / editors
+.DS_Store
+.AppleDouble
+.idea/
+.vscode/
+*.swp
+
+# --- Environment files, keys and credentials (never commit these)
+.env
+.env.*
+*.env
+.envrc
+.netrc
+.pypirc
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+credentials*
+*credentials.json
+*secret*
+*secrets*
+service-account*.json
+token.json
+
+# --- ...but keep safe, value-free examples and templates
+!.env.example
+!*.example
+!*.example.*
+!*.sample
+!*.sample.*
+!*.template
+!*.template.*

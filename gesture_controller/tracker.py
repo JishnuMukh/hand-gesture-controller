@@ -10,7 +10,7 @@ import mediapipe as mp
 import numpy as np
 from mediapipe.tasks.python import BaseOptions, vision
 
-from .config import MODEL_URL, TrackerConfig
+from .config import MODEL_SHA256, MODEL_URL, TrackerConfig
 
 HAND_CONNECTIONS: tuple[tuple[int, int], ...] = tuple(
     (c.start, c.end) for c in vision.HandLandmarksConnections.HAND_CONNECTIONS
@@ -35,7 +35,9 @@ class HandTracker:
         if not model.is_file():
             raise FileNotFoundError(
                 f"Hand landmark model not found at {model}.\n"
-                f"Download it with:\n  curl -L -o '{model}' {MODEL_URL}"
+                f"Run ./run.sh (it downloads and verifies the model), or download\n"
+                f"  {MODEL_URL}\n"
+                f"and check that its SHA-256 is {MODEL_SHA256}."
             )
         options = vision.HandLandmarkerOptions(
             base_options=BaseOptions(model_asset_path=str(model)),

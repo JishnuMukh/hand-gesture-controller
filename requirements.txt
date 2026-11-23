@@ -1,3 +1,6 @@
-mediapipe>=0.10.30
-opencv-contrib-python>=4.9
-numpy>=1.26
+# Direct dependencies, pinned to the versions this project was tested with
+# (Python 3.14.6, macOS 27.0.1, Apple silicon). Transitive dependencies are
+# pinned in constraints.txt; run.sh installs with both.
+mediapipe==1.2.3
+opencv-contrib-python==5.1.0.95
+numpy==2.5.5

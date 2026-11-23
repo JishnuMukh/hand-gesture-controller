@@ -1,1 +1,2 @@
-pytest>=8
+# Test-only dependencies (pinned to the tested versions).
+pytest==9.2.0
