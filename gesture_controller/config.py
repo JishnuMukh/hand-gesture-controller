@@ -12,10 +12,13 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_MODEL_PATH = PROJECT_ROOT / "models" / "hand_landmarker.task"
+# Pinned model build (version 1, float16) and its SHA-256. run.sh downloads and
+# verifies it; keep these identical to the values in run.sh (a test checks).
 MODEL_URL = (
     "https://storage.googleapis.com/mediapipe-models/hand_landmarker/"
-    "hand_landmarker/float16/latest/hand_landmarker.task"
+    "hand_landmarker/float16/1/hand_landmarker.task"
 )
+MODEL_SHA256 = "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
 
 
 @dataclass
